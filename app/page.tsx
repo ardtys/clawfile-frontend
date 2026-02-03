@@ -271,24 +271,24 @@ export default function ClawFileLanding() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Social Icons - Desktop */}
-            <div className="hidden md:flex items-center gap-1.5">
+            <div className="hidden md:flex items-center gap-1">
               <a
                 href="https://x.com/claw_file"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-text-tertiary hover:text-text-primary hover:bg-surface-raised rounded-lg transition-all"
+                className="group p-2.5 text-text-tertiary hover:bg-surface-raised rounded-lg transition-all"
                 aria-label="Twitter"
               >
-                <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 object-contain opacity-60 hover:opacity-100" />
+                <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
               <a
                 href="https://t.me/clawfile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-text-tertiary hover:text-[#229ED9] hover:bg-surface-raised rounded-lg transition-all"
+                className="group p-2.5 hover:bg-surface-raised rounded-lg transition-all"
                 aria-label="Telegram"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="#229ED9">
                   <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                 </svg>
               </a>
@@ -378,13 +378,13 @@ export default function ClawFileLanding() {
               Launch App
               <ExternalLink className="w-4 h-4" />
             </a>
-            <div className="flex gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <a
                 href="https://x.com/claw_file"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
-                className="flex items-center justify-center gap-2 flex-1 px-4 py-2.5 border border-subtle rounded-button hover:bg-surface-raised transition-all"
+                className="flex items-center justify-center gap-2 px-3 py-2.5 border border-subtle rounded-lg hover:bg-surface-raised transition-all"
               >
                 <Image src="/x-logo.png" alt="X" width={16} height={16} className="w-4 h-4 object-contain opacity-70" />
                 <span className="text-xs text-text-secondary">Twitter</span>
@@ -394,7 +394,7 @@ export default function ClawFileLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleNavClick}
-                className="flex items-center justify-center gap-2 flex-1 px-4 py-2.5 border border-subtle rounded-button hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all"
+                className="flex items-center justify-center gap-2 px-3 py-2.5 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#229ED9">
                   <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
@@ -909,16 +909,16 @@ export default function ClawFileLanding() {
             </div>
             <div>
               <h4 className="text-text-secondary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">Community</h4>
-              <div className="flex flex-col gap-2 sm:gap-3">
-                <a href="https://x.com/claw_file" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-subtle-hover transition-all">
-                  <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 sm:w-4.5 sm:h-4.5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">X / Twitter</span>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                <a href="https://x.com/claw_file" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-subtle-hover transition-all">
+                  <Image src="/x-logo.png" alt="X" width={16} height={16} className="w-4 h-4 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Twitter</span>
                 </a>
-                <a href="https://t.me/clawfile" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all">
-                  <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#229ED9' }}>
+                <a href="https://t.me/clawfile" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all">
+                  <svg className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="#229ED9">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                   </svg>
-                  <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Telegram</span>
+                  <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Telegram</span>
                 </a>
               </div>
             </div>
