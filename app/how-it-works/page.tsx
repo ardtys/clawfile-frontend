@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
           <div className="flex items-center gap-3">
             {/* Launch App Button */}
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-accent text-surface text-sm font-semibold rounded-button hover:bg-accent-dim transition-all duration-200"
@@ -245,7 +245,7 @@ export default function HowItWorksPage() {
           {/* Mobile Menu Footer */}
           <div className="p-4 border-t border-subtle">
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleNavClick}

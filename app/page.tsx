@@ -272,7 +272,7 @@ export default function ClawFileLanding() {
           <div className="flex items-center gap-3">
             {/* Launch App Button - Hidden on very small screens */}
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-4 py-2 bg-accent text-surface text-sm font-semibold rounded-button hover:bg-accent-dim transition-all duration-200"
@@ -345,7 +345,7 @@ export default function ClawFileLanding() {
           {/* Mobile Menu Footer */}
           <div className="p-4 border-t border-subtle">
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleNavClick}
@@ -393,7 +393,7 @@ export default function ClawFileLanding() {
           {/* CTA Buttons */}
           <div data-delay="350" className="reveal-up flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-accent text-surface font-semibold rounded-button hover:bg-accent-dim transition-all duration-200 shadow-glow flex items-center justify-center gap-2 pulse-ring"
@@ -821,7 +821,7 @@ export default function ClawFileLanding() {
             </p>
             <div data-delay="200" className="reveal-up flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-2">
               <a
-                href="https://clawfile.dev/"
+                href="https://encrypt.clawfile.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-accent text-surface font-semibold rounded-button hover:bg-accent-dim transition-all duration-200 shadow-glow flex items-center justify-center gap-2"

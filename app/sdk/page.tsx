@@ -388,7 +388,7 @@ export default function SDKDocsPage() {
             </a>
 
             <a
-              href="https://clawfile.dev/"
+              href="https://encrypt.clawfile.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-accent text-surface text-xs font-semibold rounded-lg hover:bg-accent-dim transition-all"
