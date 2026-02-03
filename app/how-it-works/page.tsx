@@ -160,7 +160,7 @@ export default function HowItWorksPage() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 text-sm">
             <Link href="/#features" className="text-text-secondary hover:text-text-primary transition-colors">Features</Link>
-            <Link href="/#code" className="text-text-secondary hover:text-text-primary transition-colors">SDK</Link>
+            <Link href="/sdk" className="text-text-secondary hover:text-text-primary transition-colors">SDK</Link>
             <Link href="/#about" className="text-text-secondary hover:text-text-primary transition-colors">About</Link>
             <span className="text-accent text-sm font-medium">How It Works</span>
           </div>
@@ -222,7 +222,7 @@ export default function HowItWorksPage() {
               {[
                 { href: '/', label: 'Home' },
                 { href: '/#features', label: 'Features' },
-                { href: '/#code', label: 'SDK' },
+                { href: '/sdk', label: 'SDK' },
                 { href: '/#about', label: 'About' },
               ].map((link) => (
                 <Link

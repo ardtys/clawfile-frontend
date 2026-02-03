@@ -265,7 +265,7 @@ export default function ClawFileLanding() {
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="#features" className="text-text-secondary hover:text-text-primary transition-colors">Features</a>
             <a href="#how-it-works" className="text-text-secondary hover:text-text-primary transition-colors">How It Works</a>
-            <a href="#code" className="text-text-secondary hover:text-text-primary transition-colors">SDK</a>
+            <a href="/sdk" className="text-text-secondary hover:text-text-primary transition-colors">SDK</a>
             <a href="#about" className="text-text-secondary hover:text-text-primary transition-colors">About</a>
           </div>
 
@@ -326,7 +326,7 @@ export default function ClawFileLanding() {
               {[
                 { href: '#features', label: 'Features' },
                 { href: '#how-it-works', label: 'How It Works' },
-                { href: '#code', label: 'SDK' },
+                { href: '/sdk', label: 'SDK' },
                 { href: '#about', label: 'About' },
               ].map((link) => (
                 <a
@@ -402,7 +402,7 @@ export default function ClawFileLanding() {
               Start Encrypting
             </a>
             <a
-              href="#code"
+              href="/sdk"
               className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 border border-subtle-strong text-text-primary font-semibold rounded-button hover:bg-surface-raised hover:border-subtle-hover transition-all duration-200 flex items-center justify-center gap-2"
             >
               View SDK
@@ -613,10 +613,10 @@ export default function ClawFileLanding() {
               </ul>
               <a
                 data-delay="250"
-                href="/how-it-works"
+                href="/sdk"
                 className="reveal-left inline-flex items-center gap-2 text-accent hover:text-accent-text transition-colors font-medium text-sm"
               >
-                Learn how it works
+                View full SDK documentation
                 <ChevronRight className="w-4 h-4" />
               </a>
             </div>
@@ -855,7 +855,7 @@ export default function ClawFileLanding() {
               <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm">
                 <li><a href="#features" className="text-text-tertiary hover:text-text-primary transition-colors">Features</a></li>
                 <li><a href="#how-it-works" className="text-text-tertiary hover:text-text-primary transition-colors">How It Works</a></li>
-                <li><a href="#code" className="text-text-tertiary hover:text-text-primary transition-colors">SDK</a></li>
+                <li><a href="/sdk" className="text-text-tertiary hover:text-text-primary transition-colors">SDK</a></li>
                 <li><a href="#about" className="text-text-tertiary hover:text-text-primary transition-colors">About</a></li>
               </ul>
             </div>
