@@ -24,7 +24,9 @@
       "Bash(cmd.exe /c \"taskkill /PID 45804 /F\")",
       "Bash(cmd.exe /c \"taskkill /PID 1964 /F\")",
       "Bash(python:*)",
-      "Bash(cmd.exe /c \"taskkill /PID 47580 /F\")"
+      "Bash(cmd.exe /c \"taskkill /PID 47580 /F\")",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:moltbook.com)"
     ]
   }
 }

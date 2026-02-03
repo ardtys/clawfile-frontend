@@ -862,11 +862,7 @@ export default function ClawFileLanding() {
             <div>
               <h4 className="text-text-secondary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">Community</h4>
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-subtle-hover transition-all">
-                  <Image src="/pumpfun-logo.png" alt="pump.fun" width={18} height={18} className="w-4 h-4 sm:w-4.5 sm:h-4.5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">pump.fun</span>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-subtle-hover transition-all">
+                <a href="https://x.com/claw_file" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-subtle-hover transition-all">
                   <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 sm:w-4.5 sm:h-4.5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
                   <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">X / Twitter</span>
                 </a>
