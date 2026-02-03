@@ -16,6 +16,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    overscroll-behavior: none;
+  }
+
+  /* Better touch targets on mobile */
+  @media (max-width: 640px) {
+    a, button {
+      min-height: 44px;
+    }
   }
 
   /* Custom scrollbar */
@@ -354,4 +364,52 @@
   0%, 100% { transform: translate(0, 0) scale(1); }
   20% { transform: translate(15px, 25px) scale(0.98); }
   60% { transform: translate(-20px, -15px) scale(1.04); }
+}
+
+/* ===== Mobile-specific styles ===== */
+@media (max-width: 640px) {
+  /* Reduce animation intensity on mobile for performance */
+  .hero-orb {
+    filter: blur(60px);
+    opacity: 0.08;
+  }
+
+  .dotted-grid {
+    background-size: 32px 32px;
+  }
+
+  .particle {
+    display: none; /* Hide particles on mobile for performance */
+  }
+
+  .bg-line {
+    opacity: 0.5;
+  }
+
+  /* Simpler reveal animations on mobile */
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(20px);
+  }
+
+  .reveal-scale {
+    transform: scale(0.95);
+  }
+
+  /* Better code scroll on mobile */
+  pre {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+  scroll-padding-top: 80px;
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 64px;
+  }
 }
