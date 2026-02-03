@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout /t 5)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(timeout /t 10 /nobreak)",
+      "Bash(cat:*)",
+      "Bash(cmd.exe /c \"taskkill /PID 23312 /F\")",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "WebFetch(domain:www.moltbook.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm run build:*)",
+      "Bash(cmd.exe /c \"taskkill /PID 42836 /F\")",
+      "Bash(npx next build)",
+      "Bash(cmd.exe /c \"taskkill /PID 26152 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 45804 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 1964 /F\")",
+      "Bash(python:*)",
+      "Bash(cmd.exe /c \"taskkill /PID 47580 /F\")"
+    ]
+  }
+}
