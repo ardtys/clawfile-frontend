@@ -19,8 +19,6 @@ import {
   Network,
   Menu,
   X,
-  Copy,
-  Check,
 } from 'lucide-react'
 
 /* ============================================
@@ -120,19 +118,6 @@ function SyntaxCode({ tab }: { tab: 'clawfile' | 'encryption' }) {
 export default function ClawFileLanding() {
   const [activeTab, setActiveTab] = useState<'clawfile' | 'encryption'>('clawfile')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [copied, setCopied] = useState(false)
-
-  const CONTRACT_ADDRESS = '0x85bEE54eBF75a86D90C36b4eaA4775223eBdcB07'
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(CONTRACT_ADDRESS)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error('Failed to copy:', err)
-    }
-  }
 
   // Close mobile menu when clicking a link
   const handleNavClick = () => {
@@ -284,7 +269,31 @@ export default function ClawFileLanding() {
             <a href="#about" className="text-text-secondary hover:text-text-primary transition-colors">About</a>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Social Icons - Desktop */}
+            <div className="hidden md:flex items-center gap-1.5">
+              <a
+                href="https://x.com/claw_file"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-text-tertiary hover:text-text-primary hover:bg-surface-raised rounded-lg transition-all"
+                aria-label="Twitter"
+              >
+                <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 object-contain opacity-60 hover:opacity-100" />
+              </a>
+              <a
+                href="https://t.me/clawfile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-text-tertiary hover:text-[#229ED9] hover:bg-surface-raised rounded-lg transition-all"
+                aria-label="Telegram"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+              </a>
+            </div>
+
             {/* Launch App Button - Hidden on very small screens */}
             <a
               href="https://encrypt.clawfile.xyz"
@@ -358,7 +367,7 @@ export default function ClawFileLanding() {
           </div>
 
           {/* Mobile Menu Footer */}
-          <div className="p-4 border-t border-subtle">
+          <div className="p-4 border-t border-subtle space-y-3">
             <a
               href="https://encrypt.clawfile.xyz"
               target="_blank"
@@ -369,6 +378,30 @@ export default function ClawFileLanding() {
               Launch App
               <ExternalLink className="w-4 h-4" />
             </a>
+            <div className="flex gap-2">
+              <a
+                href="https://x.com/claw_file"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="flex items-center justify-center gap-2 flex-1 px-4 py-2.5 border border-subtle rounded-button hover:bg-surface-raised transition-all"
+              >
+                <Image src="/x-logo.png" alt="X" width={16} height={16} className="w-4 h-4 object-contain opacity-70" />
+                <span className="text-xs text-text-secondary">Twitter</span>
+              </a>
+              <a
+                href="https://t.me/clawfile"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="flex items-center justify-center gap-2 flex-1 px-4 py-2.5 border border-subtle rounded-button hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#229ED9">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                <span className="text-xs text-text-secondary">Telegram</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -427,7 +460,7 @@ export default function ClawFileLanding() {
       </section>
 
       {/* ===== TRUST BADGES ===== */}
-      <section className="relative z-10 pb-8 sm:pb-10 px-4 sm:px-6">
+      <section className="relative z-10 pb-12 sm:pb-16 px-4 sm:px-6">
         <div ref={trustRef} className="max-w-3xl mx-auto reveal-up">
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-x-8 sm:gap-y-3">
             {[
@@ -444,37 +477,6 @@ export default function ClawFileLanding() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CONTRACT ADDRESS SECTION ===== */}
-      <section className="relative z-10 pb-12 sm:pb-16 px-4 sm:px-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex flex-col items-center gap-3">
-            <p className="text-[10px] sm:text-xs text-text-tertiary uppercase tracking-wider font-medium">Contract Address (CA)</p>
-            <button
-              onClick={copyToClipboard}
-              className="group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-surface-raised border border-subtle hover:border-accent/40 rounded-lg transition-all duration-300 hover:shadow-glow cursor-pointer w-full sm:w-auto justify-center"
-            >
-              <code className="text-[10px] sm:text-sm font-mono text-accent break-all sm:break-normal">
-                {CONTRACT_ADDRESS}
-              </code>
-              <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded bg-accent/10 border border-accent/20 group-hover:bg-accent/20 transition-all">
-                {copied ? (
-                  <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#10b981]" />
-                ) : (
-                  <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-accent" />
-                )}
-              </div>
-            </button>
-            <p className="text-[10px] sm:text-xs text-text-tertiary">
-              {copied ? (
-                <span className="text-[#10b981] font-medium">Copied to clipboard!</span>
-              ) : (
-                'Click to copy'
-              )}
-            </p>
           </div>
         </div>
       </section>
@@ -889,8 +891,8 @@ export default function ClawFileLanding() {
       {/* ===== FOOTER ===== */}
       <footer className="relative z-10 border-t border-subtle">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-            <div className="sm:col-span-2 lg:col-span-1">
+          <div className="py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+            <div className="sm:col-span-2 md:col-span-1">
               <Image src="/logo.png" alt="ClawFile" width={120} height={32} className="h-5 sm:h-6 w-auto mb-3 sm:mb-4" />
               <p className="text-text-tertiary text-xs sm:text-sm leading-relaxed">
                 File encryption built for AI agents. Secure handoffs between autonomous systems with zero-knowledge architecture.
@@ -907,35 +909,18 @@ export default function ClawFileLanding() {
             </div>
             <div>
               <h4 className="text-text-secondary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">Community</h4>
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="flex flex-col gap-2 sm:gap-3">
                 <a href="https://x.com/claw_file" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-subtle-hover transition-all">
                   <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 sm:w-4.5 sm:h-4.5 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
                   <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">X / Twitter</span>
                 </a>
+                <a href="https://t.me/clawfile" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all">
+                  <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="currentColor" style={{ color: '#229ED9' }}>
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                  </svg>
+                  <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Telegram</span>
+                </a>
               </div>
-            </div>
-            <div>
-              <h4 className="text-text-secondary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">Contract Address</h4>
-              <button
-                onClick={copyToClipboard}
-                className="group flex items-center gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-accent/30 transition-all w-full"
-              >
-                <code className="text-[9px] sm:text-[10px] font-mono text-accent truncate flex-1 text-left">
-                  {CONTRACT_ADDRESS.slice(0, 8)}...{CONTRACT_ADDRESS.slice(-6)}
-                </code>
-                {copied ? (
-                  <Check className="w-3 h-3 text-[#10b981] flex-shrink-0" />
-                ) : (
-                  <Copy className="w-3 h-3 text-text-tertiary group-hover:text-accent flex-shrink-0 transition-colors" />
-                )}
-              </button>
-              <p className="text-[9px] sm:text-[10px] text-text-tertiary mt-2">
-                {copied ? (
-                  <span className="text-[#10b981]">Copied!</span>
-                ) : (
-                  'Click to copy full address'
-                )}
-              </p>
             </div>
           </div>
           <div className="border-t border-subtle py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
