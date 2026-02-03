@@ -19,6 +19,8 @@ import {
   Network,
   Menu,
   X,
+  Copy,
+  Check,
 } from 'lucide-react'
 
 /* ============================================
@@ -118,6 +120,19 @@ function SyntaxCode({ tab }: { tab: 'clawfile' | 'encryption' }) {
 export default function ClawFileLanding() {
   const [activeTab, setActiveTab] = useState<'clawfile' | 'encryption'>('clawfile')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const CONTRACT_ADDRESS = '0x85bEE54eBF75a86D90C36b4eaA4775223eBdcB07'
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTRACT_ADDRESS)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
+  }
 
   // Close mobile menu when clicking a link
   const handleNavClick = () => {
@@ -412,7 +427,7 @@ export default function ClawFileLanding() {
       </section>
 
       {/* ===== TRUST BADGES ===== */}
-      <section className="relative z-10 pb-12 sm:pb-16 px-4 sm:px-6">
+      <section className="relative z-10 pb-8 sm:pb-10 px-4 sm:px-6">
         <div ref={trustRef} className="max-w-3xl mx-auto reveal-up">
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-x-8 sm:gap-y-3">
             {[
@@ -429,6 +444,37 @@ export default function ClawFileLanding() {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CONTRACT ADDRESS SECTION ===== */}
+      <section className="relative z-10 pb-12 sm:pb-16 px-4 sm:px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-[10px] sm:text-xs text-text-tertiary uppercase tracking-wider font-medium">Contract Address (CA)</p>
+            <button
+              onClick={copyToClipboard}
+              className="group flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-surface-raised border border-subtle hover:border-accent/40 rounded-lg transition-all duration-300 hover:shadow-glow cursor-pointer w-full sm:w-auto justify-center"
+            >
+              <code className="text-[10px] sm:text-sm font-mono text-accent break-all sm:break-normal">
+                {CONTRACT_ADDRESS}
+              </code>
+              <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center rounded bg-accent/10 border border-accent/20 group-hover:bg-accent/20 transition-all">
+                {copied ? (
+                  <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#10b981]" />
+                ) : (
+                  <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-accent" />
+                )}
+              </div>
+            </button>
+            <p className="text-[10px] sm:text-xs text-text-tertiary">
+              {copied ? (
+                <span className="text-[#10b981] font-medium">Copied to clipboard!</span>
+              ) : (
+                'Click to copy'
+              )}
+            </p>
           </div>
         </div>
       </section>
@@ -843,8 +889,8 @@ export default function ClawFileLanding() {
       {/* ===== FOOTER ===== */}
       <footer className="relative z-10 border-t border-subtle">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
-            <div className="sm:col-span-2 md:col-span-1">
+          <div className="py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+            <div className="sm:col-span-2 lg:col-span-1">
               <Image src="/logo.png" alt="ClawFile" width={120} height={32} className="h-5 sm:h-6 w-auto mb-3 sm:mb-4" />
               <p className="text-text-tertiary text-xs sm:text-sm leading-relaxed">
                 File encryption built for AI agents. Secure handoffs between autonomous systems with zero-knowledge architecture.
@@ -867,6 +913,29 @@ export default function ClawFileLanding() {
                   <span className="text-[10px] sm:text-xs text-text-tertiary group-hover:text-text-primary transition-colors">X / Twitter</span>
                 </a>
               </div>
+            </div>
+            <div>
+              <h4 className="text-text-secondary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">Contract Address</h4>
+              <button
+                onClick={copyToClipboard}
+                className="group flex items-center gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-subtle rounded-card hover:bg-surface-raised hover:border-accent/30 transition-all w-full"
+              >
+                <code className="text-[9px] sm:text-[10px] font-mono text-accent truncate flex-1 text-left">
+                  {CONTRACT_ADDRESS.slice(0, 8)}...{CONTRACT_ADDRESS.slice(-6)}
+                </code>
+                {copied ? (
+                  <Check className="w-3 h-3 text-[#10b981] flex-shrink-0" />
+                ) : (
+                  <Copy className="w-3 h-3 text-text-tertiary group-hover:text-accent flex-shrink-0 transition-colors" />
+                )}
+              </button>
+              <p className="text-[9px] sm:text-[10px] text-text-tertiary mt-2">
+                {copied ? (
+                  <span className="text-[#10b981]">Copied!</span>
+                ) : (
+                  'Click to copy full address'
+                )}
+              </p>
             </div>
           </div>
           <div className="border-t border-subtle py-4 sm:py-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
