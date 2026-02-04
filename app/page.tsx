@@ -21,6 +21,7 @@ import {
   X,
   Copy,
   Check,
+  Github,
 } from 'lucide-react'
 
 /* ============================================
@@ -301,6 +302,15 @@ export default function ClawFileLanding() {
               >
                 <Image src="/pumpfun-logo.png" alt="PumpFun" width={18} height={18} className="w-4 h-4 object-contain opacity-50 group-hover:opacity-100 transition-opacity rounded-sm" />
               </a>
+              <a
+                href="https://github.com/clawfile-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-2.5 text-text-tertiary hover:bg-surface-raised rounded-lg transition-all"
+                aria-label="GitHub"
+              >
+                <Github className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
             </div>
 
             {/* Launch App Button - Hidden on very small screens */}
@@ -387,7 +397,7 @@ export default function ClawFileLanding() {
               Launch App
               <ExternalLink className="w-4 h-4" />
             </a>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               <a
                 href="https://x.com/claw_file"
                 target="_blank"
@@ -407,6 +417,16 @@ export default function ClawFileLanding() {
               >
                 <Image src="/pumpfun-logo.png" alt="PumpFun" width={16} height={16} className="w-4 h-4 object-contain opacity-70 rounded-sm" />
                 <span className="text-xs text-text-secondary">PumpFun</span>
+              </a>
+              <a
+                href="https://github.com/clawfile-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="flex items-center justify-center gap-2 px-3 py-2.5 border border-subtle rounded-lg hover:bg-surface-raised hover:border-subtle-hover transition-all"
+              >
+                <Github className="w-4 h-4 text-text-secondary opacity-70" />
+                <span className="text-xs text-text-secondary">GitHub</span>
               </a>
             </div>
           </div>
@@ -958,6 +978,10 @@ export default function ClawFileLanding() {
                 <a href={`https://pump.fun/coin/${CA}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#e8793a]/40 transition-all">
                   <Image src="/pumpfun-logo.png" alt="PumpFun" width={16} height={16} className="w-4 h-4 object-contain opacity-60 group-hover:opacity-100 transition-opacity rounded-sm" />
                   <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">PumpFun</span>
+                </a>
+                <a href="https://github.com/clawfile-dev" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-subtle-hover transition-all">
+                  <Github className="w-4 h-4 text-text-tertiary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">GitHub</span>
                 </a>
               </div>
             </div>
