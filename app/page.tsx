@@ -19,6 +19,8 @@ import {
   Network,
   Menu,
   X,
+  Copy,
+  Check,
 } from 'lucide-react'
 
 /* ============================================
@@ -118,6 +120,15 @@ function SyntaxCode({ tab }: { tab: 'clawfile' | 'encryption' }) {
 export default function ClawFileLanding() {
   const [activeTab, setActiveTab] = useState<'clawfile' | 'encryption'>('clawfile')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const CA = '3X3BTDXtwt4FMxFUr2YRgGv7xRfpZteJDpMQitqfpump'
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(CA)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   // Close mobile menu when clicking a link
   const handleNavClick = () => {
@@ -281,6 +292,15 @@ export default function ClawFileLanding() {
               >
                 <Image src="/x-logo.png" alt="X" width={18} height={18} className="w-4 h-4 object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
+              <a
+                href={`https://pump.fun/coin/${CA}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-2.5 hover:bg-surface-raised rounded-lg transition-all"
+                aria-label="PumpFun"
+              >
+                <Image src="/pumpfun-logo.png" alt="PumpFun" width={18} height={18} className="w-4 h-4 object-contain opacity-50 group-hover:opacity-100 transition-opacity rounded-sm" />
+              </a>
             </div>
 
             {/* Launch App Button - Hidden on very small screens */}
@@ -367,7 +387,7 @@ export default function ClawFileLanding() {
               Launch App
               <ExternalLink className="w-4 h-4" />
             </a>
-            <div>
+            <div className="grid grid-cols-2 gap-2">
               <a
                 href="https://x.com/claw_file"
                 target="_blank"
@@ -377,6 +397,16 @@ export default function ClawFileLanding() {
               >
                 <Image src="/x-logo.png" alt="X" width={16} height={16} className="w-4 h-4 object-contain opacity-70" />
                 <span className="text-xs text-text-secondary">Twitter</span>
+              </a>
+              <a
+                href={`https://pump.fun/coin/${CA}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="flex items-center justify-center gap-2 px-3 py-2.5 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#e8793a]/40 transition-all"
+              >
+                <Image src="/pumpfun-logo.png" alt="PumpFun" width={16} height={16} className="w-4 h-4 object-contain opacity-70 rounded-sm" />
+                <span className="text-xs text-text-secondary">PumpFun</span>
               </a>
             </div>
           </div>
@@ -432,6 +462,40 @@ export default function ClawFileLanding() {
             >
               View SDK
             </a>
+          </div>
+
+          {/* Contract Address */}
+          <div data-delay="450" className="reveal-up mt-8 sm:mt-10 px-4">
+            <div className="max-w-xl mx-auto">
+              <p className="text-[10px] sm:text-xs text-text-tertiary uppercase tracking-wider font-semibold mb-2 text-center">Contract Address</p>
+              <div className="flex items-center gap-2 p-2 sm:p-2.5 border border-subtle rounded-card bg-surface-raised/80 backdrop-blur-sm">
+                <div className="flex-1 min-w-0 px-2 sm:px-3">
+                  <span className="block text-[10px] sm:text-xs font-mono text-text-secondary truncate select-all">
+                    {CA}
+                  </span>
+                </div>
+                <button
+                  onClick={handleCopy}
+                  className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-button text-[10px] sm:text-xs font-medium transition-all duration-200 ${
+                    copied
+                      ? 'bg-[#10b981]/15 text-[#10b981] border border-[#10b981]/30'
+                      : 'bg-surface-overlay text-text-secondary hover:text-text-primary border border-subtle hover:border-subtle-hover'
+                  }`}
+                >
+                  {copied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
+                  {copied ? 'Copied' : 'Copy'}
+                </button>
+                <a
+                  href={`https://pump.fun/coin/${CA}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-button text-[10px] sm:text-xs font-medium bg-[#e8793a]/10 text-[#e8793a] border border-[#e8793a]/20 hover:bg-[#e8793a]/20 hover:border-[#e8793a]/40 transition-all duration-200"
+                >
+                  <Image src="/pumpfun-logo.png" alt="PumpFun" width={14} height={14} className="w-3.5 h-3.5 rounded-sm" />
+                  Buy
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -890,6 +954,10 @@ export default function ClawFileLanding() {
                 <a href="https://x.com/claw_file" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-subtle-hover transition-all">
                   <Image src="/x-logo.png" alt="X" width={16} height={16} className="w-4 h-4 object-contain opacity-60 group-hover:opacity-100 transition-opacity" />
                   <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Twitter</span>
+                </a>
+                <a href={`https://pump.fun/coin/${CA}`} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#e8793a]/40 transition-all">
+                  <Image src="/pumpfun-logo.png" alt="PumpFun" width={16} height={16} className="w-4 h-4 object-contain opacity-60 group-hover:opacity-100 transition-opacity rounded-sm" />
+                  <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">PumpFun</span>
                 </a>
               </div>
             </div>
