@@ -27,7 +27,8 @@
       "Bash(cmd.exe /c \"taskkill /PID 47580 /F\")",
       "WebFetch(domain:medium.com)",
       "WebFetch(domain:moltbook.com)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git add:*)"
     ]
   }
 }

@@ -311,6 +311,17 @@ export default function ClawFileLanding() {
               >
                 <Github className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
               </a>
+              <a
+                href="https://t.me/claw_fil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-2.5 hover:bg-surface-raised rounded-lg transition-all"
+                aria-label="Telegram"
+              >
+                <svg className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="#229ED9">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+              </a>
             </div>
 
             {/* Launch App Button - Hidden on very small screens */}
@@ -397,7 +408,7 @@ export default function ClawFileLanding() {
               Launch App
               <ExternalLink className="w-4 h-4" />
             </a>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <a
                 href="https://x.com/claw_file"
                 target="_blank"
@@ -427,6 +438,18 @@ export default function ClawFileLanding() {
               >
                 <Github className="w-4 h-4 text-text-secondary opacity-70" />
                 <span className="text-xs text-text-secondary">GitHub</span>
+              </a>
+              <a
+                href="https://t.me/claw_fil"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleNavClick}
+                className="flex items-center justify-center gap-2 px-3 py-2.5 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#229ED9">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                <span className="text-xs text-text-secondary">Telegram</span>
               </a>
             </div>
           </div>
@@ -982,6 +1005,12 @@ export default function ClawFileLanding() {
                 <a href="https://github.com/clawfile-dev" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-subtle-hover transition-all">
                   <Github className="w-4 h-4 text-text-tertiary opacity-60 group-hover:opacity-100 transition-opacity" />
                   <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">GitHub</span>
+                </a>
+                <a href="https://t.me/claw_fil" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-3 py-2 border border-subtle rounded-lg hover:bg-surface-raised hover:border-[#229ED9]/40 transition-all">
+                  <svg className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="#229ED9">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                  </svg>
+                  <span className="text-xs text-text-tertiary group-hover:text-text-primary transition-colors">Telegram</span>
                 </a>
               </div>
             </div>
